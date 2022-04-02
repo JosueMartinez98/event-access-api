@@ -1,8 +1,21 @@
 import 'dotenv/config';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
+
+import { CourseController } from './modules/course/course.controller';
+import { GroupController } from './modules/group/group.controller';
+import { RoleController } from './modules/role/role.controller';
+import { SchoolController } from './modules/school/school.controller';
+import { StudentController } from './modules/student/student.controller';
+import { UserController } from './modules/user/user.controller';
+
 import { AppService } from './app.service';
+import { CourseService } from './modules/services/course.service';
+import { GroupService } from './modules/services/group.service';
+import { RoleService } from './modules/services/role.service';
+import { SchoolService } from './modules/services/school.service';
+import { StudentService } from './modules/services/student.service';
+import { UserService } from './modules/services/user.service';
 
 @Module({
   imports: [
@@ -19,7 +32,22 @@ import { AppService } from './app.service';
       retryAttempts: 10,
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [
+    CourseController,
+    GroupController,
+    RoleController,
+    SchoolController,
+    StudentController,
+    UserController,
+  ],
+  providers: [
+    UserService,
+    StudentService,
+    SchoolService,
+    RoleService,
+    GroupService,
+    CourseService,
+    AppService,
+  ],
 })
 export class AppModule {}
