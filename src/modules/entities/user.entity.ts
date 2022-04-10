@@ -56,9 +56,9 @@ export class User {
 	@Column({ name: 'status', type: 'boolean'})
 	status: boolean;
 
-	@OneToMany(() => Group, (group) => group.teacherFk)
-	groupFk: Group[]
+	@OneToMany(() => Group, (group) => group.teacher)
+	group: Group[]
 
-	@OneToMany(() => SchoolUser, (su) => su.userFk)
-	schoolUserFk: SchoolUser[];
+	@OneToMany(() => SchoolUser, (su) => su.user)
+	schoolUser: SchoolUser[];
 }

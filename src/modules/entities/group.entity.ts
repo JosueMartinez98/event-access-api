@@ -12,15 +12,15 @@ export class Group {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@ManyToOne(() => School, (school) => school.groupFk)
-	schoolFk: School;
+	@ManyToOne(() => School, (school) => school.group)
+	school: School;
 
-	@ManyToOne(() => User, (user) => user.groupFk)
-	teacherFk: User;
+	@ManyToOne(() => User, (user) => user.group)
+	teacher: User;
 
 	@OneToOne(() => Course)
 	@JoinColumn()
-	courseFk: Course;
+	course: Course;
 
 	@Column({ name: 'grade', type: 'integer' })
 	grade: number;
@@ -40,9 +40,9 @@ export class Group {
 	@Column({ name: 'status', type: 'boolean' })
 	status: boolean;
 
-	@OneToMany(() => Assistance, (assistance) => assistance.groupFk)
-	assistanceFk: Assistance[];
+	@OneToMany(() => Assistance, (assistance) => assistance.group)
+	assistance: Assistance[];
 
-	@OneToMany(() => GroupStudent, (gs) => gs.groupFk)
-	groupStudentFk: GroupStudent[];
+	@OneToMany(() => GroupStudent, (gs) => gs.group)
+	groupStudent: GroupStudent[];
 }

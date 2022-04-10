@@ -8,11 +8,11 @@ export class Assistance {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@ManyToOne(() => Group, (group) => group.assistanceFk)
-	groupFk: Group;
+	@ManyToOne(() => Group, (group) => group.assistance)
+	group: Group;
 
-	@ManyToOne(() => Student, (student) => student.assistanceFk)
-	studentFk: Student;
+	@ManyToOne(() => Student, (student) => student.assistance)
+	student: Student;
 
 	@Column({ name: 'type', type: 'varchar' })
 	type: string;

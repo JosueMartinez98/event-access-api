@@ -29,9 +29,9 @@ export class School {
 	@Column({ name: 'status', type: 'boolean'})
 	status: boolean;
 
-	@OneToMany(() => Group, (group) => group.schoolFk)
-	groupFk: Group[];
+	@OneToMany(() => Group, (group) => group.school)
+	group: Group[];
 
-	@OneToMany(() => SchoolUser, (su) => su.schoolFk)
-	schoolUseFk: SchoolUser[];
+	@OneToMany(() => SchoolUser, (su) => su.school)
+	schoolUser: SchoolUser[];
 }

@@ -5,6 +5,7 @@
 
 #files
 .env
+ormconfig.json
 
 # Logs
 logs

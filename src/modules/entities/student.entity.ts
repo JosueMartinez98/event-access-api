@@ -50,9 +50,9 @@ export class Student {
 	@Column({ name: 'status', type: 'boolean'})
 	status: boolean;
 
-	@OneToMany(() => Assistance, (assistance) => assistance.studentFk)
-	assistanceFk: Assistance[];
+	@OneToMany(() => Assistance, (assistance) => assistance.student)
+	assistance: Assistance[];
 
-	@OneToMany(() => GroupStudent, (gs) => gs.studentFk)
-	groupStudentFk: GroupStudent[];
+	@OneToMany(() => GroupStudent, (gs) => gs.student)
+	groupStudent: GroupStudent[];
 }

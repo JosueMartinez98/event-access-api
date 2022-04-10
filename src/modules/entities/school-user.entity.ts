@@ -8,11 +8,11 @@ export class SchoolUser {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@ManyToOne(() => School, (school) => school.groupFk)
-	schoolFk: School;
+	@ManyToOne(() => School, (school) => school.group)
+	school: School;
 
-	@ManyToOne(() => User, (user) => user.schoolUserFk)
-	userFk: User;
+	@ManyToOne(() => User, (user) => user.schoolUser)
+	user: User;
 
 	@Column({ name: 'status', type: 'boolean' })
 	status: boolean;
